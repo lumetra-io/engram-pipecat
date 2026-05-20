@@ -1,0 +1,48 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "pipecat-engram"
+version = "0.1.0"
+description = "Engram memory processor for Pipecat — durable, explainable memory for voice and realtime AI."
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.10"
+authors = [
+    { name = "Lumetra", email = "hello@lumetra.io" },
+]
+keywords = ["pipecat", "memory", "engram", "lumetra", "voice", "ai", "realtime", "agents"]
+classifiers = [
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Multimedia :: Sound/Audio",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3 :: Only",
+]
+dependencies = [
+    "pipecat-ai>=1.0.0",
+    "httpx>=0.27",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "pytest-asyncio>=0.23",
+]
+
+[project.urls]
+Homepage = "https://lumetra.io"
+Documentation = "https://docs.lumetra.io"
+Source = "https://github.com/lumetra-ai/engram-pipecat"
+Issues = "https://github.com/lumetra-ai/engram-pipecat/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["pipecat_engram"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
