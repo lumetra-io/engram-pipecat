@@ -88,7 +88,7 @@ class EngramClient:
         r = await self._client.post(
             url,
             headers=self._headers(),
-            json={"query": question, "bucket": bucket},
+            json={"query": question, "buckets": [bucket]},
         )
         r.raise_for_status()
         return _safe_json(r)
